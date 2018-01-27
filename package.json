@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --progress",
-    "test": "npm run lint && npm run test:client",
+    "prod:build": "babel src -d lib && webpack -p --progress",
+    "test": "npm run test:client && npm run lint",
     "lint": "eslint src webpack.confic.babel.js --ext .js,.jsx --fix",
     "test:client": "jest --coverage ./test"
   },
@@ -25,7 +26,7 @@
   "bugs": {
     "url": "https://github.com/OnuPete/Pokedex/issues"
   },
-  "homepage": "https://github.com/OnuPete/Pokedex#readme",
+  "homepage": "https://OnuPete.github.io/Pokedex",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
@@ -37,6 +38,8 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.16.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
@@ -52,6 +55,12 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
-    "webpack": "^3.10.0"
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
+  },
+  "jest": {
+    "setupFiles": [
+      "<rootDir>/test/setupTests.js"
+    ]
   }
 }

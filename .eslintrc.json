@@ -4,11 +4,12 @@
     "jest": true
   },
   "extends": [
-    "airbnb",
+    "airbnb"
   ],
   "rules": {
     "semi": [2, "never"],
     "no-unexpected-multiline": 2,
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
   },
   "settings": {
     "polyfills": ["fetch"]
