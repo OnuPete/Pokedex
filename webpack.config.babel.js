@@ -9,7 +9,7 @@ export default {
   output: {
     filename: 'js/bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: `http://localhost:${8000}/dist/`,
+    publicPath: 'http://localhost:8000/dist/',
   },
   module: {
     rules: [
@@ -20,7 +20,7 @@ export default {
       },
     ],
   },
-  devtool: isProd ? false : 'source-map',
+  devtool: 'source-map',
   resolve: {
     extensions: ['.js', '.jsx'],
   },
