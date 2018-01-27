@@ -4,4 +4,7 @@
 # testing
 /coverage/
 
+#prod
+/lib/
+
 npm-debug.log*
